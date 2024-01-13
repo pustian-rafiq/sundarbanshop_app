@@ -4,6 +4,7 @@ import {
   KeyboardAvoidingView,
   Pressable,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -99,54 +100,66 @@ const LoginScreen = () => {
   }, []);
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Image style={styles.shopLogo} source={logo} />
-      </View>
-
-      <KeyboardAvoidingView>
-        <View style={{alignItems: 'center'}}>
-          <Text style={styles.loginText}>Login to your Account</Text>
+      <ScrollView>
+        <View>
+          <Image style={styles.shopLogo} source={logo} />
         </View>
 
-        <View style={{marginTop: 70}}>
-          <View style={styles.inputWrapper}>
-            <Icon name="email" size={24} color="gray" style={{marginLeft: 8}} />
-            <TextInput
-              placeholder="Enter your email"
-              style={styles.textInput}
-              onChangeText={onChangeField('email')}
-            />
+        <KeyboardAvoidingView>
+          <View style={{alignItems: 'center'}}>
+            <Text style={styles.loginText}>Login to your Account</Text>
           </View>
-          <View style={styles.inputWrapper}>
-            <Icon name="lock" size={24} color="gray" style={{marginLeft: 8}} />
-            <TextInput
-              secureTextEntry={true}
-              placeholder="Enter your password"
-              style={styles.textInput}
-              onChangeText={onChangeField('password')}
-            />
+
+          <View style={{marginTop: 70}}>
+            <View style={styles.inputWrapper}>
+              <Icon
+                name="email"
+                size={24}
+                color="gray"
+                style={{marginLeft: 8}}
+              />
+              <TextInput
+                placeholder="Enter your email"
+                style={styles.textInput}
+                onChangeText={onChangeField('email')}
+              />
+            </View>
+            <View style={styles.inputWrapper}>
+              <Icon
+                name="lock"
+                size={24}
+                color="gray"
+                style={{marginLeft: 8}}
+              />
+              <TextInput
+                secureTextEntry={true}
+                placeholder="Enter your password"
+                style={styles.textInput}
+                onChangeText={onChangeField('password')}
+              />
+            </View>
           </View>
-        </View>
-        <View style={styles.instructionText}>
-          <Text>Keep me logged in</Text>
-          <Text style={styles.forgotPassword}>Forgot Password</Text>
-        </View>
-        <View style={{marginTop: 80}}>
-          <Pressable
-            style={styles.loginButton}
-            onPress={handleSubmit(handleLogin, onError)}>
-            <Text style={styles.loginButtonText}>Login</Text>
-          </Pressable>
-        </View>
-        <View style={{marginTop: 10}}>
-          <View style={styles.signupBtn}>
-            <Text>Don't have an account?</Text>
-            <Pressable onPress={() => navigation.navigate('Register')}>
-              <Text style={{color: 'green', fontSize: 14}}>Sign Up</Text>
+          <View style={styles.instructionText}>
+            <Text>Keep me logged in</Text>
+            <Text style={styles.forgotPassword}>Forgot Password</Text>
+          </View>
+          <View style={{marginTop: 80}}>
+            <Pressable
+              style={styles.loginButton}
+              onPress={handleSubmit(handleLogin, onError)}>
+              <Text style={styles.loginButtonText}>Login</Text>
             </Pressable>
           </View>
-        </View>
-      </KeyboardAvoidingView>
+          <View style={{marginTop: 10}}>
+            <View style={styles.signupBtn}>
+              <Text>Don't have an account?</Text>
+              <Pressable onPress={() => navigation.navigate('Register')}>
+                <Text style={{color: 'green', fontSize: 14}}>Sign Up</Text>
+              </Pressable>
+            </View>
+          </View>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </SafeAreaView>
   );
 };

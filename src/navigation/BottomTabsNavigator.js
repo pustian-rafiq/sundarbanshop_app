@@ -18,7 +18,7 @@ const BottomTabsNavigator = () => {
         options={{
           tabBarLabel: 'Home',
           tabBarLabelStyle: {color: '#008E97'},
-          headerShow: false,
+          headerShown: false,
           tabBarIcon: ({focused, color, size}) =>
             focused ? (
               <AntDesignIcon name="home" size={size} color="#008E97" />
@@ -33,7 +33,7 @@ const BottomTabsNavigator = () => {
         options={{
           tabBarLabel: 'Cart',
           tabBarLabelStyle: {color: '#008E97'},
-          headerShow: false,
+          headerShown: false,
           tabBarIcon: ({focused, color, size}) =>
             focused ? (
               <MaterialIcon name="shopping-cart" size={size} color="#008E97" />
@@ -48,7 +48,7 @@ const BottomTabsNavigator = () => {
         options={{
           tabBarLabel: 'Profile',
           tabBarLabelStyle: {color: '#008E97'},
-          headerShow: false,
+          headerShown: false,
           tabBarIcon: ({focused, color, size}) =>
             focused ? (
               <MaterialIcon name="person" size={size} color="#008E97" />
